@@ -2,6 +2,16 @@ import { fail } from "@sveltejs/kit";
 import { pb } from "../lib/index.js";
 
 
+export async function load() {
+    const records = await pb.collection('waitlist').getFullList({
+        sort: '-created',
+    })
+
+    return {
+        'registered': records.length
+    }
+}
+
 export const actions = {
     default: async({ request }) => {
 

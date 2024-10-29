@@ -1,8 +1,18 @@
 <script>
+    let { data } = $props();
+    
+    let users = $state(data?.registered)
+    
 
 </script>
 
-<div class="bg-gray-100 flex items-center justify-center h-screen">
+<div class="bg-gray-100 flex flex-col items-center justify-center h-screen">
+    <div class="stats shadow">
+        <div class="stat">
+          <div class="stat-title font-bold">Total Pre-registered User</div>
+          <div class="stat-value text-center">{users}</div>
+        </div>
+      </div><br>
     <div class="w-full max-w-md mx-auto p-6 bg-white shadow-lg rounded-lg text-center">
         <h1 class="text-4xl font-bold text-blue-600 mb-4">Coming Soon</h1>
         <p class="text-gray-600 mb-6">We are working hard to launch something amazing. Stay tuned!</p>
